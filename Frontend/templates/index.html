@@ -1,0 +1,32 @@
+{% extends 'layouts.html' %}
+{% block title %} Blog Website | Home {% endblock title %}
+{% load static %}
+
+
+    
+{% block content %}
+
+        
+        <!-- Page header with logo and tagline-->
+        {% include 'header.html' %}
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Featured blog post-->
+                    {% include 'featured_blogpost.html' %}
+                    <!-- Nested row for non-featured blog posts-->
+                    {% include 'non-featured_blogpost.html'%}
+                    <!-- Pagination-->
+                    {% include 'pagination.html' %}
+                </div>
+                <!-- Side widgets-->
+                {% include 'side_widgets.html' %}
+            </div>
+        </div>
+        
+
+{% endblock content %}
+
+

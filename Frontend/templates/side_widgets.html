@@ -1,0 +1,103 @@
+<!-- Side widgets-->
+<div class="col-lg-4">
+    <!-- Search widget-->
+    <div class="card mb-4">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+            <ul class="list-unstyled mb-0">
+                {% for post in page_obj %}
+                    <li>
+                        <a href="{% url 'detail' slug=post.slug %}">
+                            {{ post.category.name }}
+                        </a>
+                    </li>
+                {% empty %}
+                    <li>No categories available</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+
+    {% comment %} <div class="card mb-4">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-unstyled mb-0">
+                        
+                            {% for post in page_obj %}                           
+                            <a href="{% url 'detail' slug=post.slug %}"> {{post.category.name}} </a>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>  {% endcomment %}
+
+    {% comment %} <div class="card mb-4">
+    <div class="card-header">Categories</div>
+    <div class="card-body">
+        <ul class="list-unstyled mb-0">
+            
+            {% if unique_categories %}
+                {% for category in unique_categories %}
+                    <li>
+                                                  
+                            <a href="{% url 'detail' slug=post.slug %}"> {{post.category.name}} </a>
+                        {% endfor %}
+                        </a>
+                    </li>
+                
+            {% else %}
+                <li>No categories available</li>
+            {% endif %}
+            
+        </ul>
+    </div>
+</div> {% endcomment %}
+
+
+
+
+    
+    <!-- Side widget-->
+    
+        <div class="card mb-4">
+            <div class="card-header">Tags</div>
+            <div class="card-body">
+                <div class="d-flex flex-wrap">
+                    <a href="#" class="badge bg-primary text-light m-1">Web Design</a>
+                    <a href="#" class="badge bg-primary text-light m-1">HTML</a>
+                    <a href="#" class="badge bg-primary text-light m-1">CSS</a>
+                    <a href="#" class="badge bg-primary text-light m-1">JavaScript</a>
+                    <a href="#" class="badge bg-primary text-light m-1">Python</a>
+                    <a href="#" class="badge bg-primary text-light m-1">Django</a>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">Upcoming Events</div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#">Web Development Conference - August 15, 2024</a></li>
+                    <li><a href="#">UX/UI Workshop - September 10, 2024</a></li>
+                    <li><a href="#">Tech Meetup - October 5, 2024</a></li>
+                    <li><a href="#">Python Bootcamp - November 20, 2024</a></li>
+                </ul>
+            </div>
+        </div>
+                        
+    </div>
+</div>

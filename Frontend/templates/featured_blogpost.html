@@ -1,0 +1,41 @@
+{% comment %} <div class="card mb-4">
+    {% if posts %}
+    
+        <a href="#!"><img class="card-img-top" src="{{posts.8.image}}" alt="..." /></a>
+        <div class="card-body">
+            <div class="small text-muted">{{posts.8.created_at_date|date:"F j, Y"}}</div>
+            <h2 class="card-title">{{posts.8.title}}</h2>
+            <p class="card-text">{{posts.8.content}}</p>
+            <a class="btn btn-primary" href="{% url 'detail' slug=posts.8.slug %}">Read more →</a>
+            <strong><small style="font-size: 18px;float:right;">{{posts.8.category.name}}</small></strong>
+        </div>
+    
+    {% else %}
+        <p>No posts Available</p>
+    {% endif %}
+</div>  {% endcomment %}
+
+<div class="card mb-4">
+    {% if page_obj %}
+        {% with post=page_obj.1 %}
+            <a href="{% url 'detail' slug=post.slug %}">
+                <img class="card-img-top" src="{{ post.image }}" alt="..." />
+            </a>
+            <div class="card-body">
+                <div class="small text-muted">{{ post.created_at_date|date:"F j, Y" }}</div>
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.content }}</p>
+                <a class="btn btn-primary" href="{% url 'detail' slug=post.slug %}">Read more →</a>
+                <strong><small style="font-size: 18px; float:right;">{{ post.category.name }}</small></strong>
+            </div>
+        {% endwith %}
+    {% else %}
+        <p>No posts available</p>
+    {% endif %}
+</div>
+
+
+
+
+
+

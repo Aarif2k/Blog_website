@@ -1,0 +1,21 @@
+<div class="row">
+    {% if page_obj %}
+        {% for post in page_obj %}
+            <div class="col-lg-6">
+                <!-- Blog post-->
+                <div class="card mb-4">
+                    <a href="#!"><img class="card-img-top img-fluid" src="{{post.image}}" alt="..." /></a>
+                    <div class="card-body">
+                        <div class="small text-muted">{{post.created_at_date|date:"F j, Y"}}</div>
+                        <h2 class="card-title h4">{{post.title}}</h2>
+                        <p class="card-text">{{post.content}}</p>
+                        <a class="btn btn-primary" href="{% url 'detail' slug=post.slug %}">Read more →</a>
+                        <strong><small style="font-size: 18px;float:right;">{{post.category.name}}</small></strong>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No posts Available</p>
+    {% endif %}
+</div> 
