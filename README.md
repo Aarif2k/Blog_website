@@ -21,14 +21,21 @@ Bootstrap/Django Crispy Forms: For styling and form rendering (optional, based o
 
 Installation
 Prerequisites
-Python 3.x
-Django 4.x
-PostgreSQL/MySQL
+asgiref==3.8.1
+Django==5.0.7
+django-pagination==1.0.7
+Faker==26.0.0
+mysqlclient==2.2.4
+python-dateutil==2.9.0.post0
+six==1.16.0
+sqlparse==0.5.0
+tzdata==2024.1
+whitenoise==6.7.0
 Virtual Environment (recommended)
 Setup Instructions
 Clone the Repository:
 
-git clone https://github.com/your-username/blog-website.git
+git clone https://github.com/Aarif2k/blog_website.git
 cd blog_website
 Create and Activate a Virtual Environment:
 
@@ -40,7 +47,7 @@ pip install -r requirements.txt
 
 Configure Database:
 
-Update the DATABASES setting in settings.py with your PostgreSQL/MySQL credentials.
+Update the DATABASES setting in settings.py with your MySQL credentials.
 Apply migrations:
 python manage.py migrate
 
